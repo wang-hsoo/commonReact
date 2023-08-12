@@ -1,6 +1,6 @@
 
 import { useSelector, useDispatch } from 'react-redux';
-import { add } from '../state/slice';
+import { add } from '../state/commonSlice';
 
 
 function Left(){
@@ -20,7 +20,7 @@ function Left(){
 
    
     const onClick = (data) => {
-        console.log(data)
+        console.log("경로:::",JSON.stringify( data))
         dispatch(add({ path: data.path}))
     }
 

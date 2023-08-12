@@ -3,39 +3,35 @@ import Sample2 from "../pages/sample/Sample2";
 import Sample1 from "../pages/sample/Smaple1";
 import { useSelector, useDispatch } from 'react-redux';
 
+const DomPath = [
+    {
+        "path": "/menu1",
+        "dom": <Sample1 />
+    },
+    {
+        "path": "/menu2",
+        "dom": <Sample2 />
+    }
+]
 
 
+const DomNavigation = () => {
 
-function DomNavigation(){
+    const current = useSelector(( state ) => state.common.path);
 
-    const DomPath = [
-        {
-            "path": "/menu1",
-            "dom": <Sample1 />
-        },
-        {
-            "path": "/menu2",
-            "dom": <Sample2 />
-        }
-    ]
 
-    const current = useSelector(( state ) => state.path.path);
-    const [currentPage, setCurrentPage] = useState();
-
-    useEffect(() => {
+    try{
         const matchItem = DomPath.find((itme) => itme.path === current ? itme.dom : null)
-        setCurrentPage(matchItem);
-    },[current])
-
-   
-
-    return(
-        <>
-           {currentPage? currentPage?.dom : null}
-            
-        </>
         
-    )
+        if(matchItem){
+            return matchItem.dom
+        }else{
+            return <>Not Found</>
+        }
+    }catch{
+        <>에러</>
+    }
+
 }
 
 

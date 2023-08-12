@@ -1,10 +1,12 @@
 
 import { configureStore } from '@reduxjs/toolkit';
-import currentPath from './slice'
+import common from './commonSlice'
+import auth from './commonSlice'
 
 const store = configureStore({
     reducer:{
-        path: currentPath
+        common: common,
+        auth: auth
     }
 })
 

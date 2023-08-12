@@ -18,9 +18,10 @@ function Layout(){
     return(
         < >
             <Header  />
-        
-            <Left />
-            <DomNavigation />
+            <Suspense fallback={<Loading />}>
+                <Left />
+                <DomNavigation />
+            </Suspense>
             <Footer />
         </>
     )
