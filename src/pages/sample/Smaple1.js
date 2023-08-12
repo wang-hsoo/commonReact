@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Pagination from "../../component/pagination/Pagination";
-import { random } from "../../api/Random";
+
 
 function Sample1(){
 
