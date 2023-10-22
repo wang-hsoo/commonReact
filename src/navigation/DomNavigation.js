@@ -1,15 +1,14 @@
-import { useEffect, useState } from "react";
 import Sample2 from "../pages/sample/Sample2";
 import Sample1 from "../pages/sample/Smaple1";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const DomPath = [
     {
-        "path": "/menu1",
+        "path": "/menu1/menu_1",
         "dom": <Sample1 />
     },
     {
-        "path": "/menu2",
+        "path": "/menu2/menu_1",
         "dom": <Sample2 />
     }
 ]
